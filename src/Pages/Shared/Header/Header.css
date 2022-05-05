@@ -1,0 +1,13 @@
+.navbar-background {
+    background-color: #827397;
+
+}
+
+.nav-link {
+    font-weight: 800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-link:hover {
+    color: goldenrod !important;
+}
