@@ -11,6 +11,8 @@ import Register from './Pages/Login/Register/Register';
 import Footer from './Pages/Shared/Footer/Footer';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import AddProduct from './Pages/AddProduct/AddProduct';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -28,8 +30,14 @@ function App() {
           <RequireAuth>
             <ServiceDetails></ServiceDetails>
           </RequireAuth>
-
         }></Route>
+
+        <Route path='/addproduct' element={
+          <RequireAuth>
+            <AddProduct></AddProduct>
+          </RequireAuth>
+        }></Route>
+
 
 
 
@@ -37,6 +45,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
