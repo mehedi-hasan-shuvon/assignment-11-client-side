@@ -1,0 +1,25 @@
+.register-please {
+    cursor: pointer;
+}
+
+.login-form {
+    border: 2px solid #4D4C7D;
+    border-radius: 10px;
+    margin-top: 5%;
+    width: 35% !important;
+    background-color: #4D4C7D;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.login-page{
+    min-height: 76vh;
+}
+
+
+@media only screen and (max-width:576px) {
+    .login-form {
+        width: 80% !important;
+    }
+
+}
