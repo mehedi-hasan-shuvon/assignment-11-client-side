@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Introduction with Python(OOP)",
+        "price": "1000",
+        "quantity": 4,
+        "supplier-name": "Mehedi Hasan Shuvon",
+        "supplier-email": "mehedi.hasan.shuvon@gmail.com",
+        "description": "This is a  basic python introductory course for the absolute beginner.It includes 2 project as well",
+        "img": "https://i.ibb.co/5RC2qSq/introtopythonpython-hawaii-2017-1-300x200.png"
+    },
+    {
+        "id": 2,
+        "name": "Intermediate Python(Data Structure)",
+        "price": "1500",
+        "quantity": 4,
+        "supplier-name": "Mehedi Hasan Shuvon",
+        "supplier-email": "mehedi.hasan.shuvon@gmail.com",
+        "description": "this course is a Intermediate level python with data structure also with 3 projects",
+        "img": "https://i.ibb.co/W32nFSR/image-1920-300x200.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Advance Python(Algorithms)",
+        "price": "2000",
+        "quantity": 4,
+        "supplier-name": "Mehedi Hasan Shuvon",
+        "supplier-email": "mehedi.hasan.shuvon@gmail.com",
+        "description": "This course focus on Algorithms and graphs.This course also has 3 projects",
+        "img": "https://i.ibb.co/c6YTpdT/download-300x200.png"
+    },
+    {
+        "id": 4,
+        "name": "Javascript Course",
+        "price": "1500",
+        "quantity": 4,
+        "supplier-name": "Mehedi Hasan Shuvon",
+        "supplier-email": "mehedi.hasan.shuvon@gmail.com",
+        "description": "This course teaches basic HTML,CSS and the Javascript to intermediate level with 5 amazing projects.This course will start your MERN journey",
+        "img": "https://i.ibb.co/rkynNPg/images-300x200.jpg"
+    },
+    {
+        "id": 5,
+        "name": "SQL Database Course",
+        "price": "1000",
+        "quantity": 4,
+        "supplier-name": "Mehedi Hasan Shuvon",
+        "supplier-email": "mehedi.hasan.shuvon@gmail.com",
+        "description": "This is a fundamental SQL course and this course will teach SQLlight with Django framework and will provide 3 great projects with database",
+        "img": "https://i.ibb.co/4VXszqz/db-300x200.png"
+    },
+    {
+        "id": 6,
+        "name": "Machine Learning Course",
+        "price": "2000",
+        "quantity": 4,
+        "supplier-name": "Mehedi Hasan Shuvon",
+        "supplier-email": "mehedi.hasan.shuvon@gmail.com",
+        "description": "This course will start your journey towars Machine Learning and Artificial Intelligence also This course will cover 2 Tensorflow model projects",
+        "img": "https://i.ibb.co/7KjzYNy/images-300x200.png"
+    },
+    {
+        "id": 7,
+        "name": "Machine Learning Course",
+        "price": "2000",
+        "quantity": 4,
+        "supplier-name": "Mehedi Hasan Shuvon",
+        "supplier-email": "mehedi.hasan.shuvon@gmail.com",
+        "description": "This course will start your journey towars Machine Learning and Artificial Intelligence also This course will cover 2 Tensorflow model projects",
+        "img": "https://i.ibb.co/7KjzYNy/images-300x200.png"
+    }
+]
