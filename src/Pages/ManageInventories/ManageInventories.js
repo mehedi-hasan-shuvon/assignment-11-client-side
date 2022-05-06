@@ -1,4 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
+import { toast } from 'react-toastify';
 import useService from '../../CustomHooks/useService';
 import './ManageInventories.css';
 
@@ -18,18 +21,46 @@ const ManageInventories = () => {
                     console.log(data);
                     const remaining = services.filter(service => service._id !== id);
                     setServices(remaining);
+                    toast("Item has been removed")
                 });
 
         }
     }
     return (
-        <div className='w-50 mx-auto'>
-            <h2>Manage your inventories</h2>
+        <div className='w-75 mx-auto'>
+            <h1 className='py-3 text-center'>Manage Inventories</h1>
+            <h2 className='text-center'>Total: {services.length}</h2>
             {
                 services.map(product => <div key={product._id}>
-                    <h4>{product.name}
+                    {/* <h4>{product.name}
                         <button onClick={() => handelDelete(product._id)}>X</button>
-                    </h4>
+                    </h4> */}
+                    <div className='inventory my-3'>
+                        <div className='row'>
+                            <div className='col-md-4 text-center d-flex  align-items-center left-side-in'>
+                                <img className='inventory-img' src={product.img} alt="" />
+                                <h4>{product.name}</h4>
+                            </div>
+                            <div className='col-md-3 d-flex justify-content-center align-items-center middle-in'>
+                                <div>
+
+                                    <p>supplier name: {product.supplierName}</p>
+                                    <p>description: {product.description}</p>
+                                </div>
+                            </div>
+                            <div className='col-md-3 d-flex flex-column justify-content-center align-items-center right-middle'>
+                                <p className='text-white'>Quantity: {product.quantity} pieces only</p>
+
+                                <p className='text-white'>Price: {product.price}BDT (per piece)</p>
+                            </div>
+                            <div className='col-md-2 d-flex justify-content-center align-items-center right-in'>
+                                <div>
+                                    <button onClick={() => handelDelete(product._id)} className='btn btn-primary item-remove-button' ><FontAwesomeIcon icon={faDeleteLeft} /> Remove </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 
                 </div>)
             }

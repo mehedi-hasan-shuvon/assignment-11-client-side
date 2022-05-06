@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import axiosPrivate from '../../api/axiosPrivate';
 import { signOut } from 'firebase/auth';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -53,14 +55,43 @@ const MyItems = () => {
     }
     return (
         <div className='w-75 mx-auto'>
-            <h2>my items page for: {user?.email}</h2>
-            <h1>{myitem.length}</h1>
+            <h1  className='text-center py-3'>My Items:</h1>
+            <h2 className='text-center'>Total:{myitem.length}</h2>
             {
-                myitem.map(product => <div key={product._id}>{product.name}
-                    <button onClick={() => handelDelete(product._id)}>X</button>
+                myitem.map(product => <div key={product._id}>
+                    {/* {product.name}
+                    <button onClick={() => handelDelete(product._id)}>X</button> */}
+                    <div className='inventory my-3'>
+                        <div className='row'>
+                            <div className='col-md-4 text-center d-flex  align-items-center left-side-in'>
+                                <img className='inventory-img' src={product.img} alt="" />
+                                <h4>{product.name}</h4>
+                            </div>
+                            <div className='col-md-3 d-flex justify-content-center align-items-center middle-in'>
+                                <div>
+
+                                    <p>supplier name: {product.supplierName}</p>
+                                    <p>description: {product.description}</p>
+                                </div>
+                            </div>
+                            <div className='col-md-3 d-flex flex-column justify-content-center align-items-center right-middle'>
+                                <p className='text-white'>Quantity: {product.quantity} pieces only</p>
+
+                                <p className='text-white'>Price: {product.price}BDT (per piece)</p>
+                            </div>
+                            <div className='col-md-2 d-flex justify-content-center align-items-center right-in'>
+                                <div>
+                                    <button onClick={() => handelDelete(product._id)} className='btn btn-primary item-remove-button' ><FontAwesomeIcon icon={faDeleteLeft} /> Remove </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>)
             }
-        </div>
+        </div >
     );
 };
 
