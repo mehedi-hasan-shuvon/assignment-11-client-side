@@ -10,6 +10,10 @@
     color: blue;
 }
 
+.manage-inventory-button{
+    
+}
+
 /* make services responsive*/
 @media only screen and (max-width:576px) {
     .services-container {

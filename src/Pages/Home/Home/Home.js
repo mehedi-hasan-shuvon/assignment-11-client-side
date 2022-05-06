@@ -7,10 +7,10 @@ const Home = () => {
         <div className='home-banner'>
             <div className='row justify-content-center align-items-center'>
                 <div className='col-md-6 text-center'>
-                    <h1 className='welcome pt-4'>Welcome to Eco-electronics-warehouse</h1>
-                    <h4>Largest warehouse<span className='welcome'>For electronics products</span></h4>
+                    <h1 className='welcome pt-4'>Welcome to <span className='text-primary'>Eco-Electronics</span> Warehouse</h1>
+                    <h4>Largest warehouse<span className='welcome text-primary'> for electronics products</span></h4>
                     <div className='px-5 py-3'>
-                        <p className='px-5'>A electronics warehouse with a vast product collection with sound quantity for profitable business.</p>
+                        <p className='px-5'>A electronics warehouse with a vast product collection with sound quantity for profitable business.You can stock,update and clear products with any quantity whenever you want!!!</p>
                     </div>
 
                 </div>

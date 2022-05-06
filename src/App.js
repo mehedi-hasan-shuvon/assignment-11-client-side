@@ -20,7 +20,7 @@ import MyItems from './Pages/MyItems/MyItems';
 function App() {
   return (
     <div className="App">
-      <style>{'body { background-color: #E9D5DA; }'}</style>
+      <style>{'body { background-color: #DAE5D0; }'}</style>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
