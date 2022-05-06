@@ -20,7 +20,7 @@ const MyItems = () => {
             const url = `http://localhost:5000/myitems?email=${email}`;
             try {
                 // const { data } = await axiosPrivate.get(url);
-                const { data } = await axios.get(url);
+                const { data } = await axiosPrivate.get(url)
                 setMyitem(data);
                 // console.log(myitem);
             } catch (error) {
@@ -32,7 +32,7 @@ const MyItems = () => {
             }
         }
         getOrders();
-    }, [user, myitem])
+    }, [user])
     return (
         <div>
             <h2>my items page for: {user?.email}</h2>
