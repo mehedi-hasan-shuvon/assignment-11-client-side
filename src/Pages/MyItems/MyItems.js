@@ -32,11 +32,34 @@ const MyItems = () => {
             }
         }
         getOrders();
-    }, [user])
+    }, [user, services]);
+
+
+    const handelDelete = id => {
+        const procced = window.confirm("are you sure?");
+        if (procced) {
+            const url = `http://localhost:5000/product/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = services.filter(service => service._id !== id);
+                    setServices(remaining);
+                });
+
+        }
+    }
     return (
-        <div>
+        <div className='w-75 mx-auto'>
             <h2>my items page for: {user?.email}</h2>
             <h1>{myitem.length}</h1>
+            {
+                myitem.map(product => <div key={product._id}>{product.name}
+                    <button onClick={() => handelDelete(product._id)}>X</button>
+                </div>)
+            }
         </div>
     );
 };
