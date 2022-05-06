@@ -37,7 +37,7 @@ const ServiceDetails = () => {
                 .then(res => res.json)
                 .then(data => {
                     console.log('quantity updated');
-                    alert('quantity reduced by 1');
+                    toast('quantity reduced by 1');
                     // event.target.reset();
                 })
         } else {
@@ -59,6 +59,31 @@ const ServiceDetails = () => {
         }
     };
 
+
+    const handelRestock = (event) => {
+        event.preventDefault();
+        const updatedRestock = parseInt(event.target.stock.value);
+        product.quantity = parseInt(product.quantity) + updatedRestock;
+
+        setProduct(product);
+        console.log(product);
+        const url = `http://localhost:5000/product/${serviceId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json)
+            .then(data => {
+                console.log('quantity updated');
+                toast(`quantity added by ${updatedRestock}`);
+                // event.target.reset();
+            })
+
+    }
+
     return (
         <div className='text-center w-75 mx-auto'>
             <h1>Item Details</h1>
@@ -72,6 +97,15 @@ const ServiceDetails = () => {
 
             <div className='py-3'>
                 <button onClick={handelQuantity} className='btn btn-primary '>Delivered</button>
+            </div>
+
+            <div className='py-3'>
+                <h2>Restock The Items</h2>
+                <form onSubmit={handelRestock}>
+                    <input type="number" name='stock' placeholder='restock quantity' required />
+
+                    <input type="submit" value="Restock" />
+                </form>
             </div>
         </div>
     );
