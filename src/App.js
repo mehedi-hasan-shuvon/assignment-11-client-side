@@ -13,6 +13,7 @@ import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import { ToastContainer } from 'react-toastify';
+import ManageInventories from './Pages/ManageInventories/ManageInventories';
 
 
 function App() {
@@ -35,6 +36,12 @@ function App() {
         <Route path='/addproduct' element={
           <RequireAuth>
             <AddProduct></AddProduct>
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/manageinventory' element={
+          <RequireAuth>
+            <ManageInventories></ManageInventories>
           </RequireAuth>
         }></Route>
 
