@@ -10,6 +10,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft, faList } from '@fortawesome/free-solid-svg-icons';
 import PageTitle from '../Shared/PageTitle/PageTitle';
+import Loading from '../Shared/Loading/Loading';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -56,6 +57,10 @@ const MyItems = () => {
                 });
 
         }
+    }
+
+    if (services.length == 0) {
+        return <Loading></Loading>;
     }
     return (
         <div className='w-75 mx-auto'>

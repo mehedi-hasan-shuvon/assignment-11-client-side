@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useService from '../../CustomHooks/useService';
+import Loading from '../Shared/Loading/Loading';
 import PageTitle from '../Shared/PageTitle/PageTitle';
 import './ServiceDetails.css'
 
@@ -106,15 +107,23 @@ const ServiceDetails = () => {
 
 
     }
-
     return (
         <div className=''>
             <PageTitle title={"Item Details"}></PageTitle>
             <h1 className='section-header pt-3 text-center'>Item Details</h1>
             <div className='item-details-container w-50 mx-auto my-4'>
-                <div className='text-center details-img'>
+                {/* <div className='text-center details-img'>
                     <img src={product?.img} alt="" />
-                </div>
+                </div> */}
+                {
+                    product.img ?
+                        <div className='text-center details-img'>
+                            <img src={product?.img} alt="" />
+                        </div>
+                        : <Loading></Loading>
+
+
+                }
                 <div className='details-context'>
                     <h2 className='product-name-single'>{product?.name}</h2>
 

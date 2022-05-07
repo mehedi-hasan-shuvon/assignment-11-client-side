@@ -80,7 +80,7 @@ const Login = () => {
 
     return (
         <div className='login-page'>
-           <PageTitle title={"Login"}></PageTitle>
+            <PageTitle title={"Login"}></PageTitle>
             <div className='container w-50 mx-auto login-form'>
                 <h2 className='text-primary text-center my-3 please-please'>Please Login</h2>
                 <Form onSubmit={handelSubmit}>
@@ -99,7 +99,7 @@ const Login = () => {
                     </Button>
                 </Form>
                 {errorElement}
-                <p>New To Genius Car? <span onClick={navigateRegister} className='text-danger register-please'>Please Register</span></p>
+                <p>New To Eco-Electronics? <span onClick={navigateRegister} className='text-danger register-please'>Please Register</span></p>
                 <p>Forget Password? <span onClick={resetPassword} className='text-primary register-please'>Reset Password</span></p>
                 <SocialLogin></SocialLogin>
                 <ToastContainer></ToastContainer>

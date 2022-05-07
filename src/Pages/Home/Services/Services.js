@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useService from '../../../CustomHooks/useService';
+import Loading from '../../Shared/Loading/Loading';
 import Service from '../Service/Service';
 import './Services.css';
 
@@ -20,6 +21,10 @@ const Services = () => {
         navigate('/manageinventory')
     };
     const [services, setServices] = useService();
+
+    if (services.length == 0) {
+        return <Loading></Loading>
+    }
     console.log(services);
     return (
         <div id='services' className='container pb-3'>

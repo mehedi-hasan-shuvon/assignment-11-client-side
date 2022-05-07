@@ -6,10 +6,13 @@ import useService from '../../CustomHooks/useService';
 import './ManageInventories.css';
 import { useNavigate } from 'react-router-dom';
 import PageTitle from '../Shared/PageTitle/PageTitle';
+import Loading from '../Shared/Loading/Loading';
 
 
 const ManageInventories = () => {
     const [services, setServices] = useService();
+
+
 
     const navigate = useNavigate();
     const stokeUpdate = (_id) => {
@@ -32,6 +35,10 @@ const ManageInventories = () => {
                 });
 
         }
+    }
+
+    if (services.length == 0) {
+        return <Loading></Loading>;
     }
     return (
         <div className='w-75 mx-auto'>
