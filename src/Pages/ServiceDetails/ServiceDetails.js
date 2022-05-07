@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useService from '../../CustomHooks/useService';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const ServiceDetails = () => {
     const { serviceId } = useParams();
@@ -86,6 +87,7 @@ const ServiceDetails = () => {
 
     return (
         <div className='text-center w-75 mx-auto'>
+            <PageTitle title={"Item Details"}></PageTitle>
             <h1>Item Details</h1>
             <img src={product?.img} alt="" />
             <h2>{product?.name}</h2>

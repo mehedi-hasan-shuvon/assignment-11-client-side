@@ -9,6 +9,7 @@ import { signOut } from 'firebase/auth';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft, faList } from '@fortawesome/free-solid-svg-icons';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -58,6 +59,7 @@ const MyItems = () => {
     }
     return (
         <div className='w-75 mx-auto'>
+            <PageTitle title={"My items"}></PageTitle>
             <h1 className='text-center py-3'>My Items:</h1>
             <h2 className='text-center'>Total:{myitem.length}</h2>
             {

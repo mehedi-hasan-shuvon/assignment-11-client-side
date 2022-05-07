@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import useService from '../../CustomHooks/useService';
 import './ManageInventories.css';
 import { useNavigate } from 'react-router-dom';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 
 const ManageInventories = () => {
@@ -34,6 +35,7 @@ const ManageInventories = () => {
     }
     return (
         <div className='w-75 mx-auto'>
+            <PageTitle title={"Manage"}></PageTitle>
             <h1 className='py-3 text-center'>Manage Inventories</h1>
             <h2 className='text-center'>Total: {services.length}</h2>
             {

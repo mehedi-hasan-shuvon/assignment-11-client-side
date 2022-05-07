@@ -1,10 +1,12 @@
 import React from 'react';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Banner from '../Banner/Banner';
 import Services from '../Services/Services';
 import './Home.css';
 const Home = () => {
     return (
         <div className='home-banner'>
+            <PageTitle title={"Home"}></PageTitle>
             <div className='row justify-content-center align-items-center home-banner-row'>
                 <div className='col-md-6 text-center'>
                     <h1 className='welcome pt-4'>Welcome to <span className='eco-electronics'>Eco-Electronics Warehouse</span></h1>

@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import './AddProduct.css';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
@@ -29,6 +30,7 @@ const AddProduct = () => {
     return (
         <div>
             <div className='w-75 mx-auto fff'>
+                <PageTitle title={"Add Product"}></PageTitle>
                 <h1 className='text-center py-3 section-header'>Add products</h1>
                 <form className='d-flex flex-column add-product-form my-3 p-2' onSubmit={handleSubmit(onSubmit)}>
                     <input className='my-2' placeholder='Product Name' {...register("name", { required: true, maxLength: 20 })} />

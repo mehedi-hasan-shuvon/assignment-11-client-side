@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
 import { toast, ToastContainer } from 'react-toastify';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 // import auth from '../../../firebase.init';
 
@@ -52,6 +53,7 @@ const Register = () => {
 
     return (
         <div className='register-page'>
+            <PageTitle title={"Register"}></PageTitle>
             <div className='register-form'>
                 <h2 className='register-header please-please py-2' style={{ textAlign: 'center' }}>Please Register</h2>
                 <form onSubmit={handleRegister}>

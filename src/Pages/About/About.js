@@ -1,9 +1,12 @@
 import React from 'react';
 import './About.css';
 import me from '../../Images/me.png'
+import { Helmet } from 'react-helmet-async';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 const About = () => {
     return (
         <div className='container bg'>
+            <PageTitle title={"About"}></PageTitle>
             <h1 className='text-center p-2 about-header'>About Me:</h1>
             <div className='text-center py-3'>
                 <img className='my-photo' src={me} alt="" />

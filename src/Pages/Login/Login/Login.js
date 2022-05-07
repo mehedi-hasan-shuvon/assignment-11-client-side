@@ -11,6 +11,8 @@ import './Login.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 
 const Login = () => {
@@ -78,6 +80,7 @@ const Login = () => {
 
     return (
         <div className='login-page'>
+           <PageTitle title={"Login"}></PageTitle>
             <div className='container w-50 mx-auto login-form'>
                 <h2 className='text-primary text-center my-3 please-please'>Please Login</h2>
                 <Form onSubmit={handelSubmit}>
