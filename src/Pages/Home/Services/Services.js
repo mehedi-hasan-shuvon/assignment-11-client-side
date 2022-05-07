@@ -25,7 +25,7 @@ const Services = () => {
     if (services.length == 0) {
         return <Loading></Loading>
     }
-    console.log(services);
+    // console.log(services);
     return (
         <div id='services' className='container pb-3'>
             <h1 className='text-center  my-4 section-header'>Inventory Preview</h1>

@@ -14,7 +14,7 @@ const Home = () => {
                     <h1 className='welcome pt-4'>Welcome to <span className='eco-electronics'>Eco-Electronics Warehouse</span></h1>
                     <h4>Largest warehouse<span className='eco-electronics'> for electronics products</span></h4>
                     <div className='px-5 py-3'>
-                        <p className='px-5'>A electronics warehouse with a vast product collection with sound quantity for profitable business.You can stock,update and clear products with any quantity whenever you want!!!</p>
+                        <p className='px-5 warehouse-details'>A electronics warehouse with a vast product collection with sound quantity for profitable business.You can stock,update and clear products with any quantity whenever you want!!!</p>
                     </div>
 
                 </div>
@@ -26,8 +26,8 @@ const Home = () => {
                 <Services></Services>
             </div>
 
-            <div  className='py-3 chart-class'>
-                <h1 className='text-center  section-header'>Our Inventory Comparisons</h1>
+            <div className='py-3 chart-class'>
+                <h1 id='Comparisons' className='text-center  section-header'>Our Inventory Comparisons</h1>
                 <Test></Test>
             </div>
             <div className='py-3'>

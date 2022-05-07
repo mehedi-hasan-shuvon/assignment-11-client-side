@@ -3,7 +3,7 @@ import { ProgressBar } from 'react-bootstrap';
 import './Ratings.css';
 const Ratings = () => {
     return (
-        <div id='Comparisons' className='w-75 mx-auto'>
+        <div className='w-75 mx-auto'>
             <div className='row'>
                 <div className='col-md-6 py-2'>
                     <h2 className='py-2'>Service Details</h2>

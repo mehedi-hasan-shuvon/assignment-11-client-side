@@ -10,21 +10,29 @@ const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
     const onSubmit = data => {
-        console.log(data);
-        data.supplierEmail = user.email;
-        const url = "https://fast-retreat-32260.herokuapp.com/product";
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-                toast("product have been added");
+        // console.log(data.price);
+        if (data.price <= 0) {
+            toast("price can not be negative or zero. Please Try again");
+        } else if (data.quantity <= 0) {
+            toast("Quantity can not be negative or zero. Please Try again");
+        } else {
+            data.supplierEmail = user.email;
+            const url = "https://fast-retreat-32260.herokuapp.com/product";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
             })
+                .then(res => res.json())
+                .then(result => {
+                    // console.log(result);
+                    toast("product have been added");
+                })
+        }
+
+
 
     };
     return (

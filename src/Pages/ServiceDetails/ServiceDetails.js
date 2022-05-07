@@ -13,7 +13,7 @@ const ServiceDetails = () => {
 
 
     const navigate = useNavigate();
-    
+
 
     const routeToManage = () => {
         navigate('/manageinventory')
@@ -33,7 +33,7 @@ const ServiceDetails = () => {
 
         if (product.quantity > 0) {
             setProduct(product);
-            console.log(product);
+            // console.log(product);
             const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`;
             fetch(url, {
                 method: 'PUT',
@@ -44,7 +44,7 @@ const ServiceDetails = () => {
             })
                 .then(res => res.json)
                 .then(data => {
-                    console.log('quantity updated');
+                    // console.log('quantity updated');
                     toast('quantity reduced by 1');
                     // event.target.reset();
                 })
@@ -56,7 +56,7 @@ const ServiceDetails = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     const remaining = services.filter(service => service._id !== serviceId);
                     setServices(remaining);
                     toast(`all items of ${product.name} have been develered. Directed to inventory`);
@@ -71,42 +71,47 @@ const ServiceDetails = () => {
     const handelRestock = (event) => {
         event.preventDefault();
         const updatedRestock = parseInt(event.target.stock.value);
-        product.quantity = parseInt(product.quantity) + updatedRestock;
-
-        if (product.quantity > 0) {
-            setProduct(product);
-            console.log(product);
-            const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`;
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(product)
-            })
-                .then(res => res.json)
-                .then(data => {
-                    console.log('quantity updated');
-                    toast(`quantity added by ${updatedRestock}`);
-                    // event.target.reset();
-                })
+        if (updatedRestock < 0) {
+            toast("Cannot restock negative quantity");
         } else {
-            const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`
+            product.quantity = parseInt(product.quantity) + updatedRestock;
 
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    const remaining = services.filter(service => service._id !== serviceId);
-                    setServices(remaining);
-                    toast(`all items of ${product.name} have been develered. Directed to inventory`);
-                    navigate('/home')
+            if (product.quantity > 0) {
+                setProduct(product);
+                // console.log(product);
+                const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`;
+                fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(product)
+                })
+                    .then(res => res.json)
+                    .then(data => {
+                        // console.log('quantity updated');
+                        toast(`quantity added by ${updatedRestock}`);
+                        // event.target.reset();
+                    })
+            } else if (product.quantity == 0) {
+                const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`
 
-                });
+                fetch(url, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data);
+                        const remaining = services.filter(service => service._id !== serviceId);
+                        setServices(remaining);
+                        toast(`all items of ${product.name} have been develered. Directed to inventory`);
+                        navigate('/home')
 
+                    });
+
+            }
         }
+
 
 
 
