@@ -7,7 +7,7 @@ const useToken = (user) => {
             console.log(user);
             const email = user?.user?.email;
             if (email) {
-                const { data } = await axios.post('https://nameless-peak-83594.herokuapp.com/login', { email });
+                const { data } = await axios.post('https://fast-retreat-32260.herokuapp.com/login', { email });
                 // console.log(data);
                 setToken(data.accessToken);
                 localStorage.setItem('accessToken', data.accessToken);

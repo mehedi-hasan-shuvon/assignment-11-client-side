@@ -11,7 +11,7 @@ const AddProduct = () => {
     const onSubmit = data => {
         console.log(data);
         data.supplierEmail = user.email;
-        const url = "http://localhost:5000/product";
+        const url = "https://fast-retreat-32260.herokuapp.com/product";
         fetch(url, {
             method: 'POST',
             headers: {

@@ -1,18 +1,24 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faDeleteLeft, faList } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import { toast } from 'react-toastify';
 import useService from '../../CustomHooks/useService';
 import './ManageInventories.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const ManageInventories = () => {
     const [services, setServices] = useService();
 
+    const navigate = useNavigate();
+    const stokeUpdate = (_id) => {
+        navigate(`/inventory/${_id}`);
+    };
+
     const handelDelete = id => {
         const procced = window.confirm("are you sure?");
         if (procced) {
-            const url = `http://localhost:5000/product/${id}`
+            const url = `https://fast-retreat-32260.herokuapp.com/product/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -54,8 +60,14 @@ const ManageInventories = () => {
                                 <p className='text-white'>Price: {product.price}BDT (per piece)</p>
                             </div>
                             <div className='col-md-2 d-flex justify-content-center align-items-center right-in'>
-                                <div>
-                                    <button onClick={() => handelDelete(product._id)} className='btn btn-primary item-remove-button' ><FontAwesomeIcon icon={faDeleteLeft} /> Remove </button>
+                                <div className='row '>
+                                    <div className='col-12 d-flex justify-content-center align-items-center'>
+                                        <button onClick={() => stokeUpdate(product._id)} className='btn btn-primary checkout-btn-special'><FontAwesomeIcon icon={faList} /> Manage</button>
+                                    </div>
+                                    <div className='col-12 d-flex justify-content-center align-items-center'>
+                                        <button onClick={() => handelDelete(product._id)} className='btn btn-primary item-remove-button' ><FontAwesomeIcon icon={faDeleteLeft} /> Remove </button>
+                                    </div>
+
                                 </div>
 
                             </div>

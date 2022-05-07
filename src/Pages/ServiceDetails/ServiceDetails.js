@@ -13,7 +13,7 @@ const ServiceDetails = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${serviceId}`;
+        const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
@@ -26,7 +26,7 @@ const ServiceDetails = () => {
         if (product.quantity > 0) {
             setProduct(product);
             console.log(product);
-            const url = `http://localhost:5000/product/${serviceId}`;
+            const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -41,7 +41,7 @@ const ServiceDetails = () => {
                     // event.target.reset();
                 })
         } else {
-            const url = `http://localhost:5000/product/${serviceId}`
+            const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`
 
             fetch(url, {
                 method: 'DELETE'
@@ -67,7 +67,7 @@ const ServiceDetails = () => {
 
         setProduct(product);
         console.log(product);
-        const url = `http://localhost:5000/product/${serviceId}`;
+        const url = `https://fast-retreat-32260.herokuapp.com/product/${serviceId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

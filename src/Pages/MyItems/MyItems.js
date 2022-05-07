@@ -8,18 +8,21 @@ import axiosPrivate from '../../api/axiosPrivate';
 import { signOut } from 'firebase/auth';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faDeleteLeft, faList } from '@fortawesome/free-solid-svg-icons';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
     const [services, setServices] = useService();
     const [myitem, setMyitem] = useState([]);
     const navigate = useNavigate();
+    const stokeUpdate = (_id) => {
+        navigate(`/inventory/${_id}`);
+    };
     useEffect(() => {
         const email = user?.email;
         const getOrders = async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/myitems?email=${email}`;
+            const url = `https://fast-retreat-32260.herokuapp.com/myitems?email=${email}`;
             try {
                 // const { data } = await axiosPrivate.get(url);
                 const { data } = await axiosPrivate.get(url)
@@ -40,7 +43,7 @@ const MyItems = () => {
     const handelDelete = id => {
         const procced = window.confirm("are you sure?");
         if (procced) {
-            const url = `http://localhost:5000/product/${id}`
+            const url = `https://fast-retreat-32260.herokuapp.com/product/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -55,7 +58,7 @@ const MyItems = () => {
     }
     return (
         <div className='w-75 mx-auto'>
-            <h1  className='text-center py-3'>My Items:</h1>
+            <h1 className='text-center py-3'>My Items:</h1>
             <h2 className='text-center'>Total:{myitem.length}</h2>
             {
                 myitem.map(product => <div key={product._id}>
@@ -80,8 +83,14 @@ const MyItems = () => {
                                 <p className='text-white'>Price: {product.price}BDT (per piece)</p>
                             </div>
                             <div className='col-md-2 d-flex justify-content-center align-items-center right-in'>
-                                <div>
-                                    <button onClick={() => handelDelete(product._id)} className='btn btn-primary item-remove-button' ><FontAwesomeIcon icon={faDeleteLeft} /> Remove </button>
+                                <div className='row '>
+                                    <div className='col-12 d-flex justify-content-center align-items-center'>
+                                        <button onClick={() => stokeUpdate(product._id)} className='btn btn-primary checkout-btn-special'><FontAwesomeIcon icon={faList} /> Manage</button>
+                                    </div>
+                                    <div className='col-12 d-flex justify-content-center align-items-center'>
+                                        <button onClick={() => handelDelete(product._id)} className='btn btn-primary item-remove-button' ><FontAwesomeIcon icon={faDeleteLeft} /> Remove </button>
+                                    </div>
+
                                 </div>
 
                             </div>
