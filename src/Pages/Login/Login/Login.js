@@ -79,7 +79,7 @@ const Login = () => {
     return (
         <div className='login-page'>
             <div className='container w-50 mx-auto login-form'>
-                <h2 className='text-primary text-center my-3'>Please Login</h2>
+                <h2 className='text-primary text-center my-3 please-please'>Please Login</h2>
                 <Form onSubmit={handelSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />

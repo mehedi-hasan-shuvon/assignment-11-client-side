@@ -8,7 +8,7 @@ const Service = ({ service }) => {
 
     const navigate = useNavigate();
     const stokeUpdate = (_id) => {
-        navigate(`/service/${_id}`);
+        navigate(`/inventory/${_id}`);
     };
 
     return (

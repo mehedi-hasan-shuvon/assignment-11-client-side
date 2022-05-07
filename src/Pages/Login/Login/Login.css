@@ -2,12 +2,18 @@
     cursor: pointer;
 }
 
+.please-please{
+    font-family:monospace;
+    font-weight: 700;
+    color: #334257 !important;
+}
+
 .login-form {
-    border: 2px solid #4D4C7D;
+    border: 2px solid #6998AB;
     border-radius: 10px;
     margin-top: 5%;
     width: 35% !important;
-    background-color: #4D4C7D;
+    background-color: #6998AB;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }

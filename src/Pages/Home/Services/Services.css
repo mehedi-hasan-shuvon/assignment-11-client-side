@@ -10,8 +10,10 @@
     color: blue;
 }
 
-.manage-inventory-button{
-    
+.section-header{
+    font-family:monospace;
+    font-weight: 700;
+    color: #334257;
 }
 
 /* make services responsive*/

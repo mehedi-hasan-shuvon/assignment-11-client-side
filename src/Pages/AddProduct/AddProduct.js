@@ -28,9 +28,9 @@ const AddProduct = () => {
     };
     return (
         <div>
-            <div className='w-50 mx-auto'>
-                <h1 className='text-center'>Add your product</h1>
-                <form className='d-flex flex-column add-product-form my-3' onSubmit={handleSubmit(onSubmit)}>
+            <div className='w-75 mx-auto fff'>
+                <h1 className='text-center py-3 section-header'>Add products</h1>
+                <form className='d-flex flex-column add-product-form my-3 p-2' onSubmit={handleSubmit(onSubmit)}>
                     <input className='my-2' placeholder='Product Name' {...register("name", { required: true, maxLength: 20 })} />
                     <input className='mb-2' placeholder='Supplier Name' value={user?.displayName} type="text" {...register("supplierName")} />
                     <input className='mb-2' placeholder='Supplier Email' value={user?.email} required readOnly disabled type="email" {...register("supplierEmail")} />

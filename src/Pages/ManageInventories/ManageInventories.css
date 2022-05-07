@@ -14,7 +14,7 @@
 .left-side-in {
     transition: all 0.711s ease;
     border-right: 2px solid #83b411;
-    background-color: #363062;
+    background-color: #6998AB;
     border-radius: 20px 0px 0px 20px;
     color: white !important;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -30,32 +30,61 @@
 
 .middle-in {
     border-right: 2px solid #83b411;
-    background-color: #363062;
+    background-color: #6998AB;
     color: white !important;
 }
-.middle-in:hover{
+
+.middle-in:hover {
     background-color: #574e99;
 }
 
 .right-middle {
     border-right: 2px solid #83b411;
-    background-color: #363062;
+    background-color: #6998AB;
     color: white !important;
 }
-.right-middle:hover{
+
+.right-middle:hover {
     background-color: #574e99;
 }
 
-.right-in{
+.right-in {
     background-color: #363062;
     border-radius: 0px 20px 20px 0px;
 }
-.right-in:hover{
+
+.right-in:hover {
     background-color: #FD5D5D;
-    
+
 }
 
-.item-remove-button{
+.item-remove-button {
     background-color: #FF8AAE !important;
     border: 1px solid #FD5D5D !important;
+}
+
+
+@media only screen and (max-width:576px) {
+
+    .right-in {
+        padding-top: 7px;
+        padding-bottom: 10px;
+        background-color: #363062;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    .left-side-in {
+        border-radius: 20px 20px 0px 0px;
+        border-right: 0px solid  #363062;
+        
+    }
+    .right-middle {
+        border-right: 0px solid  #363062;
+      
+    }
+
+    .middle-in {
+        border-right: 0px solid  #363062;
+        
+    }
 }

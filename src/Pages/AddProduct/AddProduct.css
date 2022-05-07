@@ -1,23 +1,49 @@
 .add-product-form {
-    border: 5px solid #363062;
-    background-color: #363062;
+    border: 5px solid #6998AB;
+    background-color: #6998AB;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .add-product-form input {
-    background-color: #A0BCC2;
+    background-color: white;
+    border: none;
 }
 
 .add-product-form textarea {
-    background-color: #A0BCC2;
+    background-color: white;
+    ;
+    border: none;
 }
 
 .add-btn {
+
     background-color:
-        #F3BDA1 !important;
+        #363062 !important;
+    width: 20%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 3px;
+    color: white;
+
 }
 
 .add-btn:hover {
-    background-color: #FFD59E!important;
+    background-color: #FFD59E !important;
+}
+
+@media only screen and (max-width:576px) {
+
+
+    .add-btn {
+
+
+        width: 50%;
+
+    }
+
+    .fff{
+        width: 90% !important;
+    }
+
 }

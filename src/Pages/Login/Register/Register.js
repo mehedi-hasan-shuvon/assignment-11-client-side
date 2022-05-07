@@ -53,7 +53,7 @@ const Register = () => {
     return (
         <div className='register-page'>
             <div className='register-form'>
-                <h2 className='register-header text-primary py-2' style={{ textAlign: 'center' }}>Please Register</h2>
+                <h2 className='register-header please-please py-2' style={{ textAlign: 'center' }}>Please Register</h2>
                 <form onSubmit={handleRegister}>
                     <input type="text" name="name" id="" placeholder='Your Name' />
 
