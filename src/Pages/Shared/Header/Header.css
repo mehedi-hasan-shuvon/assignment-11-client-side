@@ -11,3 +11,9 @@
 .nav-link:hover {
     color: goldenrod !important;
 }
+
+.company-name{
+    font-family:monospace;
+    font-weight: 700;
+    color: #334257;
+}

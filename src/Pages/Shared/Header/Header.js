@@ -20,12 +20,12 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" sticky="top" className='navbar-background' variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-                        <img src={logo} height='40px' alt="" />
+                        <img src={logo} height='39px' alt="" />
+                        <span className='company-name'> Eco-electronics</span>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="home#services">Services</Nav.Link>
                             <Nav.Link as={Link} to="/Blogs">Blogs</Nav.Link>
                         </Nav>
                         <Nav>
