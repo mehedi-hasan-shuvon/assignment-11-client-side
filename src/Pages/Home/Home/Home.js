@@ -1,4 +1,5 @@
 import React from 'react';
+import Ratings from '../../Ratings/Ratings';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Test from '../../Test/Test';
 import Banner from '../Banner/Banner';
@@ -25,9 +26,13 @@ const Home = () => {
                 <Services></Services>
             </div>
 
-            <div className='py-3 chart-class'>
-            <h1 className='text-center  section-header'>Our Inventory Comparisons</h1>
+            <div  className='py-3 chart-class'>
+                <h1 className='text-center  section-header'>Our Inventory Comparisons</h1>
                 <Test></Test>
+            </div>
+            <div className='py-3'>
+                <h1 className='text-center  section-header'>Our Service Ratings</h1>
+                <Ratings></Ratings>
             </div>
 
 
