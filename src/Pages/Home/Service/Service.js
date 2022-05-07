@@ -1,3 +1,5 @@
+import { faDeleteLeft, faList } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Service.css'
@@ -11,14 +13,27 @@ const Service = ({ service }) => {
 
     return (
         <div className='service'>
-            <img className='img-fluid w-100 img-border' src={service?.img} alt="" />
-            <h2>{service?.name} </h2>
-            <h4>Supplier Name:{service?.supplierName}</h4>
+            <img className='img-fluid w-100 img-border item-img-single' src={service?.img} alt="" />
+            {
+                service?.price > 50000 ? <div class="badge">Hot</div> : <></>
+            }
+            <div className='item-description-single'>
+                <h2 className='product-name-single'>{service?.name} </h2>
+                <p className='product-details-single'>{service?.description}</p>
+                <p className='product-details-single'>Supplier Name: {service?.supplierName}</p>
+                <hr />
+                <div className='row'>
+                    <div className='col-6 d-flex flex-column justify-content-center '>
+                        <p className='product-price-single'>Quantity: {service?.quantity}</p>
+                        <p className='product-price-single'>Price: {service?.price} BDT</p>
+                    </div>
+                    <div className='col-6 d-flex flex-column justify-content-center align-items-center'>
+                        <button onClick={() => stokeUpdate(service?._id)} className='btn btn-primary checkout-btn'><FontAwesomeIcon icon={faList} /> Manage Stock </button>
+                    </div>
+                </div>
 
-            <p><small>{service?.description}</small></p>
-            <p className='text-white'>Price: {service?.price} BDT</p>
-            <p className='text-white'>Quantity: {service?.quantity}</p>
-            <button onClick={() => stokeUpdate(service?._id)} className='btn btn-primary checkout-btn'>Manage Stock</button>
+
+            </div>
         </div>
     );
 };

@@ -9,6 +9,10 @@
     background-color: #A0BCC2;
 }
 
+.add-product-form textarea {
+    background-color: #A0BCC2;
+}
+
 .add-btn {
     background-color:
         #F3BDA1 !important;
