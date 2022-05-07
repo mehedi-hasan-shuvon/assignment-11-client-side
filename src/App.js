@@ -15,6 +15,7 @@ import AddProduct from './Pages/AddProduct/AddProduct';
 import { ToastContainer } from 'react-toastify';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import MyItems from './Pages/MyItems/MyItems';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/Blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
@@ -56,10 +58,10 @@ function App() {
 
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
-      </Routes>
+      </Routes >
       <Footer></Footer>
       <ToastContainer></ToastContainer>
-    </div>
+    </div >
   );
 }
 
