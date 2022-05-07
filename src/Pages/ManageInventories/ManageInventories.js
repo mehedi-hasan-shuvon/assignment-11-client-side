@@ -19,6 +19,10 @@ const ManageInventories = () => {
         navigate(`/inventory/${_id}`);
     };
 
+
+    const routeTocreate = () => {
+        navigate('/addproduct')
+    };
     const handelDelete = id => {
         const procced = window.confirm("are you sure?");
         if (procced) {
@@ -43,8 +47,11 @@ const ManageInventories = () => {
     return (
         <div className='w-75 mx-auto'>
             <PageTitle title={"Manage"}></PageTitle>
-            <h1 className='py-3 text-center'>Manage Inventories</h1>
+            <h1 className='py-3 text-center section-header'>Manage Inventories</h1>
             <h2 className='text-center'>Total: {services.length}</h2>
+            <div className='text-center py-2'>
+                <button onClick={routeTocreate} className='btn btn-primary '>add new item</button>
+            </div>
             {
                 services.map(product => <div key={product._id}>
                     {/* <h4>{product.name}

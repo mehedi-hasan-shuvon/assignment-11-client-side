@@ -10,7 +10,7 @@ const Blogs = () => {
             <div className='container text-center p-3'>
                 <img className='img-fluid question-img' src={question} alt="" />
             </div>
-            <h2 className='text-center question-answer-header'>Question Answers:</h2>
+            <h2 className='text-center  section-header'>Question Answers:</h2>
             <div className='container mx-auto py-3 pt-1 pb-5'>
                 <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">

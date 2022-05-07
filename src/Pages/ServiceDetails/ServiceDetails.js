@@ -13,6 +13,11 @@ const ServiceDetails = () => {
 
 
     const navigate = useNavigate();
+    
+
+    const routeToManage = () => {
+        navigate('/manageinventory')
+    };
 
 
     useEffect(() => {
@@ -147,6 +152,10 @@ const ServiceDetails = () => {
                     </form>
                 </div>
 
+            </div>
+
+            <div className='py-4 text-center'>
+                <button onClick={routeToManage} className='manage-inventory-button btn btn-primary'>Manage Inventories</button>
             </div>
         </div>
     );

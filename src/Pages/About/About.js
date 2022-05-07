@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div className='container bg'>
             <PageTitle title={"About"}></PageTitle>
-            <h1 className='text-center p-2 about-header'>About Me:</h1>
+            <h1 className='text-center p-2 section-header'>About Me:</h1>
             <div className='text-center py-3'>
                 <img className='my-photo' src={me} alt="" />
             </div>

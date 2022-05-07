@@ -65,7 +65,7 @@ const MyItems = () => {
     return (
         <div className='w-75 mx-auto'>
             <PageTitle title={"My items"}></PageTitle>
-            <h1 className='text-center py-3'>My Items:</h1>
+            <h1 className='text-center py-3 section-header'>My Items:</h1>
             <h2 className='text-center'>Total:{myitem.length}</h2>
             {
                 myitem.map(product => <div key={product._id}>
