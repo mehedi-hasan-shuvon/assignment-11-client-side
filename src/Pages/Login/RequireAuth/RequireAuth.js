@@ -4,6 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import authImg from '../../../Images/auth.png'
 
 const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
@@ -22,10 +23,17 @@ const RequireAuth = ({ children }) => {
 
     if (user.providerData[0]?.providerId == 'password' && !user.emailVerified) {
         return <div className='text-center'>
-            <h2 className='text-center text-danger'>Your Email is not Verified!!</h2>
-            <h2 className='text-center text-success'>Please verify your email address!!</h2>
+            <div>
+                <div className='container py-2'>
+                    <img className='question-img' src={authImg} alt="" />
+                </div>
+                <h2 className='text-center text-danger'>Your Email is not Verified!!</h2>
+                <h2 className='text-center text-success'>Please verify your email address!!</h2>
+                <h2 className='test-center text-info'>After verify please refresh the page</h2>
+            </div>
+
             <button
-                className='btn btn-primary'
+                className='btn btn-primary mb-3'
                 onClick={async () => {
                     await sendEmailVerification();
                     toast('Sent email');

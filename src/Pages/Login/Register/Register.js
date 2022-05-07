@@ -34,12 +34,18 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+        if (password.length < 7) {
+            toast("password  must be greater then 7 characters")
+        } else {
+            await createUserWithEmailAndPassword(email, password);
+            await updateProfile({ displayName: name });
+            // console.log(user);
+            toast('Updated profile');
+            navigate('/home');
+        }
         // const agree = event.target.terms.checked;
 
-        await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: name });
-        toast('Updated profile');
-        navigate('/home');
+
 
     }
     if (loading || updating) {
