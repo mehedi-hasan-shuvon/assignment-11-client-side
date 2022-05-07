@@ -1,23 +1,44 @@
-.welcome{
-    color: #363062 ;
-    font-family:monospace;
-}
-.home-banner{
-    color: #363062 ;
-    
+.welcome {
+    color: #363062;
+    font-family: monospace;
 }
 
-.eco-electronics{
-    font-family:monospace;
+.home-banner {
+    color: #363062;
+
+}
+
+.eco-electronics {
+    font-family: monospace;
     font-weight: 700;
     color: #334257;
 }
 
+.chart-class {
+    margin: auto;
+    padding-left: 6%;
+}
+
 
 @media only screen and (max-width:576px) {
-   
-.home-banner-row{
-    flex-direction: column-reverse;
-}
+
+    .home-banner-row {
+        flex-direction: column-reverse;
+    }
+
+    .chart-class {
+        margin-left: 0;
+        padding-left: 0%;
+    }
+
+    .bar-chart {
+        left: -15%;
+    }
+
+    .recharts-wrapper{
+        left: -12%;
+    }
+    
+    
 
 }

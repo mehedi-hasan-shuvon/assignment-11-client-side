@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import MyItems from './Pages/MyItems/MyItems';
 import Blogs from './Pages/Blogs/Blogs';
+import Test from './Pages/Test/Test';
 
 
 function App() {
@@ -56,7 +57,7 @@ function App() {
 
 
 
-
+        <Route path='/test' element={<Test></Test>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes >
       <Footer></Footer>
